@@ -2,15 +2,15 @@
 //
 
 #include <Arduino.h>
-#include <MIDI.h>
-#include "io.h"
+#include "saa.h"
+#include "input.h"
 #include "note.h"
-
-MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
 
 static unsigned long lastUpdate = 0;
 
 void setup(){
+
+    Serial.begin(57600);
 
     //magic to get 8mhz clock on pin A5
     //credit to: https://forum.arduino.cc/t/how-to-get-8mhz-on-a-gpio-of-a-nano-every/704106/4
@@ -45,20 +45,6 @@ void setup(){
     write_data(0x18, 0x00);
     write_data(0x19, 0x00);
 
-    //envelope control test set triangle envelope 2 and 5
-    //write_data(0x18, 0x8A);
-    //write_data(0x19, 0x8A);
-
-    // Connect the handleNoteOn function to the library,
-    // so it is called upon reception of a NoteOn.
-    MIDI.setHandleNoteOn(handle_note_on);    // Put only the name of the function
-
-    // Do the same for NoteOffs
-    MIDI.setHandleNoteOff(handle_note_off);
-
-    // Initiate MIDI communications, listen to all channels
-    MIDI.begin(MIDI_CHANNEL_OMNI);
-
     //startup noise
     start_note(3, 24, 64);
     delay(32);
@@ -83,8 +69,11 @@ void setup(){
 
 void loop(){
 
- MIDI.read();
  unsigned long now = millis();
+
+ if(Serial.available() > 0){
+    parse_serial_in(Serial.read());
+ }
 
 //10ms ADSR check
  if ( (now - lastUpdate) > 10 ) {

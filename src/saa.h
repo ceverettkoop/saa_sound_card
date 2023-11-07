@@ -1,5 +1,5 @@
-#ifndef IO_H
-#define IO_H
+#ifndef SAA_H
+#define SAA_H
 
 //Pin connected to clock pin (SH_CP) of 74HC595
 static const int clockPin = 8;

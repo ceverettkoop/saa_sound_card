@@ -1,15 +1,20 @@
 #include "note.h"
-#include "io.h"
+#include "saa.h"
 
 struct Status output_status[6];
 const int release_rate = 12;
 const int attack_rate = 4;
 const int decay_rate = 4;
 
+//equal temperment approximation of real notes
+//const byte note_adr[] = {5, 32, 60, 85, 110, 132, 153, 173, 192, 210, 227, 243};
+//just intonation based on random octaves of the saa
+const byte node_adr[] = {0, 13, 31, 47, 68, 84, 108, 127, 148, 175, 198, 229 };
+//C = 526
+
 //note addressing adapted from https://github.com/Bobcatmodder/SAATunes
 void start_note (byte chan, byte note, byte volume) {
 
-    const byte note_adr[] = {5, 32, 60, 85, 110, 132, 153, 173, 192, 210, 227, 243}; // The 12 note-within-an-octave values for the SAA1099, starting at B
     const byte octave_adr[] = {0x10, 0x11, 0x12}; //The 3 octave addresses (was 10, 11, 12)
     const byte channel_adr[] = {0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D}; //Addresses for the channel frequencies
     byte addressOut;

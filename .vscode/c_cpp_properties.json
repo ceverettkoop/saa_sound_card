@@ -8,13 +8,12 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/home/sean/development/saabot/include",
-                "/home/sean/development/saabot/src",
-                "/home/sean/development/saabot/.pio/libdeps/nano_every/MIDI Library/src",
+                "/home/sean/development/saa_sound_card/include",
+                "/home/sean/development/saa_sound_card/src",
+                "/home/sean/development/saa_sound_card/.pio/libdeps/nano_every/MIDI Library/src",
                 "/home/sean/.platformio/packages/framework-arduino-megaavr/cores/arduino/api/deprecated",
                 "/home/sean/.platformio/packages/framework-arduino-megaavr/cores/arduino",
                 "/home/sean/.platformio/packages/framework-arduino-megaavr/variants/nona4809",
-                "/home/sean/development/saabot/.pio/libdeps/nano_every/Unity/src",
                 "/home/sean/.platformio/packages/framework-arduino-megaavr/libraries/EEPROM/src",
                 "/home/sean/.platformio/packages/framework-arduino-megaavr/libraries/SPI/src",
                 "/home/sean/.platformio/packages/framework-arduino-megaavr/libraries/SoftwareSerial/src",
@@ -24,13 +23,12 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/home/sean/development/saabot/include",
-                    "/home/sean/development/saabot/src",
-                    "/home/sean/development/saabot/.pio/libdeps/nano_every/MIDI Library/src",
+                    "/home/sean/development/saa_sound_card/include",
+                    "/home/sean/development/saa_sound_card/src",
+                    "/home/sean/development/saa_sound_card/.pio/libdeps/nano_every/MIDI Library/src",
                     "/home/sean/.platformio/packages/framework-arduino-megaavr/cores/arduino/api/deprecated",
                     "/home/sean/.platformio/packages/framework-arduino-megaavr/cores/arduino",
                     "/home/sean/.platformio/packages/framework-arduino-megaavr/variants/nona4809",
-                    "/home/sean/development/saabot/.pio/libdeps/nano_every/Unity/src",
                     "/home/sean/.platformio/packages/framework-arduino-megaavr/libraries/EEPROM/src",
                     "/home/sean/.platformio/packages/framework-arduino-megaavr/libraries/SPI/src",
                     "/home/sean/.platformio/packages/framework-arduino-megaavr/libraries/SoftwareSerial/src",
